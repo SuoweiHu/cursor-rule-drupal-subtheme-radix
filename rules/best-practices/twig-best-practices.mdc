@@ -1,0 +1,8 @@
+---
+alwaysApply: true
+---
+# Twig Template Best Practices
+- Use Drupal's Twig debugging to identify template suggestions.
+- Keep logic minimal in templates; use preprocess functions for data manipulation.
+- Use BEM naming conventions for CSS classes.
+- Reference component templates from [components/](components/) when possible.

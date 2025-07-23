@@ -1,0 +1,12 @@
+---
+alwaysApply: false
+---
+# Single-Component-Directory Component Guide
+##  Single-Component-Directory's Component Directory Sturcture
+Each component directory typically contains: (assuming the component name is sdc-component-name)
+- A compulsory `sdc-component-name.component.yml` file for component metadata, it is requried for the directory to be identified as a SDC by Drupal
+- A compulsory `sdc-component-name.twig` file for the template, it is required for the directory to be identified as a SDC by Drupal
+- Optional `sdc-component-name.scss`, which will be compiled into `sdc-component-name.css` and `sdc-component-name.css.map` by laravel mix
+- Optional `_sdc-component-name.js`, which will be compiled into `sdc-component-name.js` by laravel mix
+- Optional `README.mdx` file, revealing the "Key Features", "Custom Options", "Template Structure" and "Usage" of the theme.
+- Follow naming conventions: `[sdc-component-name]-opc` for OPC-specific components (that is all the newly created components).

@@ -1,0 +1,62 @@
+---
+alwaysApply: true
+---
+# Theme Folder Structure (Project Structure) Guide
+A typical custom subtheme folder might include the following structure: (below is an example subtheme created from Radix Drupal theme)
+```
+subtheme_name/ (root folder)
+    │
+    ├── logo.svg                        # Theme logo that appears in the admin UI and potentially in the frontend
+    ├── screenshot.png                  # Theme screenshot displayed in the Drupal admin appearance page
+    ├── subtheme_name.breakpoints.yml   # Defines responsive breakpoints for the theme
+    ├── subtheme_name.info.yml          # Core theme definition file with metadata, regions, and dependencies
+    ├── subtheme_name.theme             # PHP functions that modify Drupal's behavior for this theme, this is where the theme hooks lives
+    ├── subtheme_name.libraries.yml     # Defines CSS and JS assets to be loaded by the theme
+    │
+    │
+    ├── templates/                      # Twig template overrides
+    │   ├── block/                      # ├── Block template overrides
+    │   ├── content/                    # ├── Content type template overrides
+    │   ├── field/                      # ├── Field template overrides
+    │   ├── layout/                     # ├── Layout template overrides
+    │   ├── navigation/                 # ├── Navigation template overrides
+    │   ├── form/                       # ├── Form element template overrides
+    │   ├── views/                      # ├── Views template overrides
+    │   └── misc/                       # └── Miscellaneous template overrides
+    │
+    │
+    ├── components/                     # SDC components directory
+    │   ├── hero/                       #  ├── hero component
+    │   │   ├── hero.component.yml      #  │      ├── (compulsory!) Component metadata and schema definition
+    │   │   ├── hero.twig               #  │      ├── (compulsory!) Twig template for component markup
+    │   │   ├── hero.scss               #  │      ├── (optional)    Component-specific styles (compiled to hero.css)
+    │   │   └── _hero.js                #  │      └── (optional)    Component JavaScript functionality (compiled to hero.js)
+    │   ├── card/                       #  ├── card component
+    │   ├── nav/                        #  ├── nav component
+    │   ├── breadcrumb/                 #  ├── breadcrumb component
+    │   ├── banner/                     #  ├── banner component
+    │   └── ...                         #  └── other components
+    │
+    │
+    ├── src/
+    │   ├── scss/                       # Source SCSS files for global styles
+    │   ├── assets/                     # Source images, fonts, and other static assets
+    │   └── js/                         # Source JavaScript files
+    │
+    │
+    ├── build/                          # Compiled and processed assets
+    │   ├── css/                        # ├── Compiled CSS files
+    │   ├── js/                         # ├── Compiled JavaScript files
+    │   └── assets/                     # └── Optimized images and other processed assets
+    │
+    │
+    ├── webpack.mix.js                  # Laravel Mix configuration file for asset compilation
+    ├── .env.example                    # Example environment variables template (copied to created .env.local which will be used by laravel mix)
+    ├── package.json                    # Node.js package configuration with dependencies and scripts
+    ├── package-lock.json               # Auto-generated file that locks dependency versions for consistent installs
+    ├── node_modules/                   # Node.js dependencies (gitignored)
+    │
+    │
+    └── ...                             # add more important file if applies
+
+```

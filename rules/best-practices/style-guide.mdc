@@ -1,0 +1,20 @@
+---
+alwaysApply: false
+---
+# Style Guide
+## Boostrap / Tailwind Guide
+**Boostrap**
+- The boostrap root scss file can be found at [src/scss/_bootstrap.scss](src/scss/_bootstrap.scss),
+- You can configure its style by modifying the files in the files [src/scss/base](src/scss/base) folder (for instance if you want to chagne the primary color of the bootstrap, you could add `$primary: #000;` in the [src/scss/base/_variables.scss](src/scss/base/_variables.scss) file)
+**Tailwind CSS**
+- Place tailwind related styles and configurations in [src/tailwind-css-input.css](src/tailwind-css-input.css)
+- Currently the project is using tailwind v4, so there is no `tailwind.config.js` in the project.
+- By setting `prefix(opc)` in the [src/tailwind-css-input.css](src/tailwind-css-input.css) file, all the classes must be used with the `opc:` prefix (for instance, `mb-10` -> `opc:mb-10`, `group-hover:bg-red-400`->`opc:group-hover:bg-red-400`)
+**Best Practices**
+- In case of the need for declaring new utilties in tailwind css, please priotize reusing existing variables declared by bootstrap (for instance instead of declaring `@theme{--var-primary:#000;}`, do `@theme{--var-primary:var(--bs-primary);}`)
+  This way the same color or measure unit do not get declared twice in two different places, eliminating the potential of overlook during the modification of these values
+## SCSS/CSS Style Guide
+- Use variables and mixins from [src/scss/base/](src/scss/base/) for consistency.
+- Prefer SCSS nesting only up to 2 levels deep. (if necessary can go deeper, but need user's confirmation before proceeding)
+- Place global styles in [main.style.scss](src/scss/main.style.scss). (only do so if you cannot use any of the tailwind cs and boostrap existing to align the look with the design)
+- Use BEM naming for classes. (e.g. nav, nav__list, nav__item, nav__item--active)
