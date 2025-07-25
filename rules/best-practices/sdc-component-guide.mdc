@@ -1,5 +1,5 @@
 ---
-alwaysApply: false
+alwaysApply: true
 ---
 # Single-Component-Directory Component Guide
 ##  Single-Component-Directory's Component Directory Sturcture
@@ -10,3 +10,6 @@ Each component directory typically contains: (assuming the component name is sdc
 - Optional `_sdc-component-name.js`, which will be compiled into `sdc-component-name.js` by laravel mix
 - Optional `README.mdx` file, revealing the "Key Features", "Custom Options", "Template Structure" and "Usage" of the theme.
 - Follow naming conventions: `[sdc-component-name]-opc` for OPC-specific components (that is all the newly created components).
+
+## Best Practices
+- When you are updating the SDC component, please remember to update its `.component.yml`, `README.mdx` along its `.twig`, `.js`, `.scss` files to reflect the changes. For instance when you are removing a prop or slot from the `.twig` file, please besure to update them in the `.component.yml` file to indicate the prop or slot is no longer there, and reflect this change in the description and examples in the `README.mdx` file.
